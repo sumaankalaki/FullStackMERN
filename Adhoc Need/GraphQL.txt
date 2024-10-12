@@ -1,15 +1,22 @@
 What is GraphQL :
     [used by facebook]
+
     1. it is query language competitiaior to Rest (HTTP Protocol)
     2. Benefits over REST?
         2.1 Fewer Requests
         2.2 Data retrivel is client side Defined
-        2.3 Strongly typed
-
+        2.3 Strongly type
+.............................................................
 How do you define Graph Ql request:
-via
+ we are basically pre defining the request a user can make ( we are making a sort of list( graphql schema )&
+ we are letting user request the minimal things which a user have to use and ignoring the rest of extra things in short
+ saving time & making it less  expensive?
+via----------
 1.Fields
+        firstname
+        email
 2.arguments
+    (where:{ user_id: {_eq: 2}})
 3.Queries
         query Users {
                 users(where:{ user_id: {_eq: 2}}){
@@ -19,7 +26,6 @@ via
                 email
                 }
         }
-
 4.Mutations
         mutation MyMutation{
             insert_users(objects: {
@@ -33,3 +39,27 @@ via
                 }
             }
         }
+..........................................................
+How do you create a graphQl server?
+step 1 : Write the graphql schema
+         schema represents what kind of queries/ mutation you support and their types
+         type User {
+            id:Id!
+            email: String!
+            firstname: String!
+            lastname: String!
+         }
+         type Query {
+            getUser(id: ID!): User
+         }
+         input CreatUserInput {
+            email: String!
+            firstname: String!
+            lastname: String!
+         }
+         type Mutation {
+            creatUser (input: CreateUserInput!): User!
+         }
+1.In GraphQl , a "type"  defines the shape of an object you can fetch from your service and fields it contains.
+2."inputs" in GrpahQL are special kinds of types that are used for passing data to o mutation  ( or sometimes a query).
+    you can think of them as analogous to function arguments.
