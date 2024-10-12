@@ -1,0 +1,35 @@
+What is GraphQL :
+    [used by facebook]
+    1. it is query language competitiaior to Rest (HTTP Protocol)
+    2. Benefits over REST?
+        2.1 Fewer Requests
+        2.2 Data retrivel is client side Defined
+        2.3 Strongly typed
+
+How do you define Graph Ql request:
+via
+1.Fields
+2.arguments
+3.Queries
+        query Users {
+                users(where:{ user_id: {_eq: 2}}){
+                firstname
+                lastname
+                user_id
+                email
+                }
+        }
+
+4.Mutations
+        mutation MyMutation{
+            insert_users(objects: {
+                email: "suma@gmail.com",
+                user_id : 10,
+                firstname: "suma",
+                lastname : "singh"
+            }){
+                returning {
+                    firstname
+                }
+            }
+        }
