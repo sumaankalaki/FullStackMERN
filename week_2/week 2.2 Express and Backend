@@ -1,0 +1,119 @@
+What is ECMAScript
+What is javaScript?
+What is Node.js?
+What is Bun?
+
+ECMAScript is a  Scripting language Specification on which javascript is based.
+it serves as the guidelines or the rules for scripting language design.
+https://tc39.es/ecma262/#sec-number-and-dates
+
+Javascript :
+Common Js Browser engines:
+1.v8 - Used by google chrome/chromium - c
+    https://github.com/v8/v8
+2.spiderMonkey - Used by firefox- C+Rust
+    https://spidermonkey.dev/
+
+
+Node.js  ;
+
+What  can you do with node.js?
+1. creat Clis
+2. create a video player
+3. create a game
+4. [create an http server]
+
+
+__________________________________________________________________________________________________________________________
+What is an HTTP server?
+
+HTTP [ hyper text transfer protocol]
+1. A Protocol that is defined for machine to communicate
+2. specifically for websites, it is the mos common way for your website's frontend to talk to its backend.
+
+First lets understand what are frontends and backends?.
+frontend/Clients( HTML/CSS/JS)
+Backends(Node.js)
+
+HTTP Protocol
+In the end , its client throwing some information at a server
+server doing something with that information server responding back with the final result.
+
+Think of them as function, where
+1. Arguments are something client sends
+2. Rather than calling a function using is name, the client uses a URL
+3. Rather than the function body, the server does something with the request
+4, Rather than the function returning a value, the server responds with some data.
+
+Http ( clients side):
+1.Protocol( Http/Https)
+2.Address ( URL/IP/PORT)
+3.Route
+4.Headers, Body, QueryParameter
+5.Method
+
+[Protocol]|   [URL]     | [Route]
+HTTPS:// chat.openai.com/backend-api/conversion
+
+Things Happen in your browser;
+1.Browser parses the URL.
+2.Does DNS LookUp(Converts google.com to an IP)
+3. Establishes  a connection to The Ip( does the handshake).
+
+Whats is DNS Resolution:
+URLs are just like contacts in your phone
+in the end , they map to an IP
+it you ever buy a URL of your own, you will need to point it to the IP of your Server.
+
+Things that happen on your server after the request is received:
+1.you get the inputs( route, body, headers)
+2. you do soe logic on the input, calculate the output
+3.you return the output body, headers and status code
+
+what are the common methods you can send to your BE server?
+1. GET
+2. POST
+3. PUT
+4. DELETE
+what are common status codes he backend responds with?
+1. 200-Everything is ok
+2. 404- Page/route not found
+3. 403- Authentication issues
+4. 500- internal server error
+
+There are many libraries  that let you creat HTTP servers
+The most famous one is express
+HomeWork:
+//create a todo app that lets user store todos on the server
+/create an http server in rust using actix-web
+//creat an http server in golang using the gurrila framework
+//A great excise to do is to creat an HTTP from scratch in C/C++
+it is out of scope for this course , but it you're looking for a challenges
+
+Library that we are using - Express:
+//Lets crete  a simple HTTP server.
+
+3steps: in visual studio
+1. npm init -y
+2. npm install express
+3. node index.js
+
+
+//File:index.js
+ const express = require('express' 4.18.2)
+ const app = express()
+ const port = 3000
+
+ app.get('/' , (req,res)=>{
+    res.send('Hello world!');
+ })
+
+ app.listen( port, () = >{
+    console.log(`Example app listening on port ${port}`)
+ })
+
+
+
+
+
+
