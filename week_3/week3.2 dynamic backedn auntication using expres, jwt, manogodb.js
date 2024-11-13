@@ -9,7 +9,6 @@ async function getAnimalData() {
         console.log(finalData);
 }
 
-
 //Authentication---------------------------------------------------------------------------------------------
 /*
 Project= Let people signup to your website only allow signed in users to see people ( create dummy people list)
