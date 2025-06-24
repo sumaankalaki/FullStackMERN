@@ -1,0 +1,75 @@
+what is a database:
+it is a place where data is stored persistently.
+
+Example of data stored in databases-
+ for Linked in:
+    1.user date
+    2.users posts
+    3.users connection relationships
+    4.Messages
+
+    get me my feed -> Express(does auth checks) -> (give me posts for this user) -> DataBase
+
+good question to have this point
+Why dont we let the user hit the database directly?
+what extra does the http server provide exactly?
+ 1. databases were are created using protocols that browsers dont understand
+ 2. Databases dont have granual access as as first class citizen. very hard to do user specific access in them
+ 3.There are some databases (firebase) that let you get rid of the http server and try their best to provide granula access.
+
+Databases usually allow access to 4 primitives
+1. create Data
+2. Read Data
+3. Update Data
+4. Delete Data
+Popularly know as CRUD
+
+MongoDB
+What is it?
+MongoDB is a NoSQL database that stores data in a document-oriented format (JSON-like BSON).
+It is designed to handle large volumes of unstructured or semi-structured data and offers high performance, scalability, and flexibility.
+Role:
+It serves as the database where your application's data is stored and retrieved.
+
+Lets see the API for the mangoose library
+Eventually, we''ll be using prisma (which is the industry standard way of this)
+
+Mongoose
+What is it?
+Mongoose is an Object Data Modeling (ODM) library for Node.js. It provides a higher-level abstraction for interacting with MongoDB.
+Mongoose enables you to define schemas for your MongoDB collections and offers built-in validation, middleware, and data relationships.
+Role:
+It acts as a tool to manage the interaction between your application and MongoDB in an organized and structured way.
+
+[Feature]	       [MongoDB]                                                [Mongoose]
+Type           Database	                                                ODM Library for MongoDB
+Purpose	       Stores, retrieves, and manages data.	                    Provides a structured interface to interact with MongoDB.
+Schema	       Schema-less (flexible).	                                Schema-based (structured).
+Validation     Limited validation at the database level.	            Strong validation defined in schemas.
+Language	   Works with various programming languages.	            Works specifically with Node.js.
+Performance	   Direct database interaction, faster for simple tasks.	Adds an abstraction layer, may introduce slight overhead.
+
+
+const userSchema = new mangoose.Schema({
+    email: String,
+    password: String,
+    purchasedCourses: [{
+        type: mangoose.schema.Types.ObjectId,
+        ref : 'Course'
+    ]}
+});
+
+const courseSchema = new mangoose.Schema({
+        title: String,
+        price : 5999
+});
+
+const user = mangoose.model('user', userScheme);
+const course = mangoose.model('course', courseschema);
+
+3 Jargons you need to know in Databases 
+1.Cluster
+2.Database
+3.Table
+
+

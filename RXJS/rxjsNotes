@@ -1,0 +1,17 @@
+1.Rxjs provides us single api to deal with the data that are coming from multiple sources over time.
+The data that is continuously coming to your application is often called as data streams.
+
+Streams of data can be of:
+1.synchronous data
+2.Asynchronous data
+3.Getting data from the server as HTTP calls
+4.DOM Events
+5.Function with return value.
+
+These all data streams are processed differently with the javascript with different process.
+Asynchronous data we use callbacks and promises.
+For DOM Events we use event handler.
+For array of data we use loops.
+
+But is rxjs we can handle these all data by using single api. We call is as Observables.
+This is defined from the pattern Observer development patterns.

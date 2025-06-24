@@ -1,0 +1,8 @@
+DOM manipulation is very hard to write as as developer for Dynamic website
+
+Lets try to create a TODO Application using DOm manipulation:
+1. document.createElement
+2. document.appendChild
+3. element.setAttribute
+4. element.children
+

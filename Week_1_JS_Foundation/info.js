@@ -44,7 +44,7 @@ More practically , Js runs line by line and only one line at a time.
     Loops - For Loop
     1.write the program to greet a person given their first and last name
     2.write a program that greets a person based on their gender.(if else)
-    3. write a program that counts from 0-1000 and prints ( for loop
+    3.write a program that counts from 0-1000 and prints ( for loop
 
 ------------------------------------------------------------
 (7).complex primitive in js ( array object)
@@ -97,7 +97,7 @@ Asynchronous:Asynchronous function in programming are those that allow a program
              this is particularly important in environments like web browsers or Node.js, where waiting for an operation to finish
              (like fetching data from a server or reading a large file) could make the application unresponsive.
              HomeWork::
-             1.Creat a counter in javascript (count down from 30 to 0)          //setInterval(()=>{}, 1000);
+             1. Create a counter in javascript (count down from 30 to 0)          //setInterval(()=>{}, 1000);
 
                     let counter = 30;
                     const countdown = setInterval(() => {
